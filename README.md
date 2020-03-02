@@ -31,4 +31,8 @@ import { FeatureFlags } from "aws-cdk-featureflags";
 new FeatureFlags(this, "featureflags");
 ```
 
+## Versioning
+
+Currently pre-release. Check back when we've reached at least 1.0.0!
+
 [aws cdk]: https://aws.amazon.com/cdk
