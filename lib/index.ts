@@ -5,6 +5,7 @@ import { RestApi, LambdaIntegration } from '@aws-cdk/aws-apigateway';
 import * as path from 'path';
 
 export class FeatureFlags extends Construct {
+  public readonly url: string;
   constructor(scope: Construct, id: string) {
     super(scope, id);
 
@@ -29,6 +30,7 @@ export class FeatureFlags extends Construct {
     const api = new RestApi(this, 'api', {
       restApiName: this.toString()
     });
+    this.url = api.url;
     const resource = api.root.addResource("{key}");
     resource.addMethod('ANY', new LambdaIntegration(fn), {
       methodResponses: [

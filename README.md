@@ -28,7 +28,14 @@ yarn add aws-cdk-featureflags
 ```ts
 import { FeatureFlags } from "aws-cdk-featureflags";
 ...
-new FeatureFlags(this, "featureflags");
+const featureFlags = new FeatureFlags(this, "featureflags");
+new Function(this, "my-function", {
+  code: Code.fromAsset("./my-function"),
+  handler: "index.handler",
+  environment: {
+    FEATURE_FLAGS_URL: featureFlags.url
+  }
+});
 ```
 
 ## Versioning
