@@ -11,6 +11,9 @@
 
 An [AWS CDK] feature flag implementation
 
+# :exclamation: WIP :exclamation:
+This package is a **WORK IN PROGRESS**, please make sure you're not using this until we've reached at least v1.0.0.
+
 ## Why this package
 
 For when you want feature flags.
