@@ -54,8 +54,8 @@
   "keywords": [
     "aws",
     "cdk",
-    "feature flag",
-    "feature toggle",
+    "feature-flags",
+    "feature-toggle",
     "dynamodb",
     "lambda"
   ],
