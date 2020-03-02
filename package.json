@@ -1,0 +1,134 @@
+{
+  "name": "aws-cdk-featureflags",
+  "version": "1.26.0",
+  "description": "An AWS CDK feature flag implementation",
+  "scripts": {
+    "build": "jsii",
+    "build:watch": "jsii -w",
+    "package": "jsii-pacmak",
+    "cdk": "cdk",
+    "check": "npm test && npm run lint",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run check",
+    "preversion": "npm run lint",
+    "test": "jest",
+    "version": "npm run format && git add -A src"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "jsii": {
+    "outdir": "dist",
+    "versionFormat": "short",
+    "excludeTypescript": [
+      "tests"
+    ],
+    "targets": {
+      "python": {
+        "distName": "aws-cdk-featureflags",
+        "module": "ElegantDevelopment.AWSCDKFeatureFlags"
+      },
+      "dotnet": {
+        "namespace": "ElegantDevelopment.AWSCDKFeatureFlags",
+        "packageId": "ElegantDevelopment.AWSCDKFeatureFlags"
+      },
+      "java": {
+        "package": "io.github.elegantdevelopment.AWSCDKFeatureFlags",
+        "maven": {
+          "groupId": "io.github.elegantdevelopment",
+          "artifactId": "AWSCDKFeatureFlags"
+        }
+      }
+    }
+  },
+  "awscdkio": {
+    "twitter": "elegant_dev"
+  },
+  "stability": "experimental",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elegantdevelopment/aws-cdk-featureflags.git"
+  },
+  "keywords": [
+    "aws",
+    "cdk",
+    "feature flag",
+    "feature toggle",
+    "dynamodb",
+    "lambda"
+  ],
+  "author": {
+    "name": "Justin Taylor",
+    "email": "jtaylor@elegantdevelopment.co.uk",
+    "url": "https://github.com/jsdtaylor"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/elegantdevelopment/aws-cdk-featureflags/issues"
+  },
+  "homepage": "https://github.com/elegantdevelopment/aws-cdk-featureflags#readme",
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.26.0",
+    "@aws-cdk/aws-dynamodb": "1.26.0",
+    "@aws-cdk/aws-lambda": "1.26.0",
+    "@aws-cdk/core": "1.26.0",
+    "aws-lambda-router": "^0.8.2",
+    "aws-sdk": "^2.621.0"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "^1.26.0",
+    "@types/aws-lambda": "^8.10.45",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.6",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "aws-cdk": "^1.26.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "jsii": "^0.22.0",
+    "jsii-pacmak": "^0.22.0",
+    "jsii-release": "^0.1.2",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib/*.ts",
+      "!node_modules/**"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": {
+          "warnOnly": true
+        }
+      },
+      "testEnvironment": "node"
+    }
+  },
+  "peerDependencies": {
+    "@aws-cdk/aws-dynamodb": "1.26.0",
+    "@aws-cdk/aws-lambda": "1.26.0",
+    "@aws-cdk/core": "1.26.0",
+    "@aws-cdk/aws-apigateway": "^1.26.0"
+  },
+  "bundledDependencies": [
+    "aws-sdk",
+    "aws-lambda-router"
+  ]
+}

@@ -1,0 +1,11 @@
+src
+tsconfig.json
+tslint.json
+.prettierrc
+
+
+# Exclude jsii outdir
+dist
+
+# Include .jsii
+!.jsii
