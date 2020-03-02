@@ -26,7 +26,9 @@ yarn add aws-cdk-featureflags
 ### Example TypeScript usage
 
 ```ts
-
+import { FeatureFlags } from "aws-cdk-featureflags";
+...
+new FeatureFlags(this, "featureflags");
 ```
 
 [aws cdk]: https://aws.amazon.com/cdk
