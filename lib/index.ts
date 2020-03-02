@@ -4,13 +4,9 @@ import { Function, Runtime, Code } from '@aws-cdk/aws-lambda';
 import { RestApi, LambdaIntegration } from '@aws-cdk/aws-apigateway';
 import * as path from 'path';
 
-export interface Props {}
-
 export class FeatureFlags extends Construct {
-  protected props: Props;
-  constructor(scope: Construct, id: string, props: Props) {
+  constructor(scope: Construct, id: string) {
     super(scope, id);
-    this.props = props;
 
     const table = new Table(this, 'table', {
       partitionKey: {
